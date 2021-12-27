@@ -1,0 +1,230 @@
+@import "reset.css";
+
+@keyframes quiet {
+  25% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.8);
+  }
+}
+
+@keyframes normal {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.6);
+  }
+}
+@keyframes loud {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(1.2);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body > div {
+  width: 33%;
+  height: 60%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+@media screen and (max-width: 901px) {
+  body > div {
+    width: 300px;
+  }
+}
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: gold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 1px gainsboro;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.header > button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border: none;
+  background-color: inherit;
+}
+.info {
+  background-color: white;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 1px 1px gainsboro;
+}
+.info__image > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 3px 5px 5px gainsboro;
+}
+.info__box {
+  width: 100px;
+  height: 120px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: left;
+  flex-direction: column;
+}
+.info__box > span:first-child {
+  font-size: larger;
+  font-weight: bolder;
+}
+.info__box > span:nth-child(3) {
+  font-size: smaller;
+  opacity: 0.4;
+}
+.info__box > button {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: gold;
+  border: none;
+  box-shadow: 2px 2px 2px gainsboro;
+}
+.search {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 1px gainsboro;
+}
+.search > input {
+  margin-left: 10px;
+  border: none;
+}
+.search > input:focus {
+  outline: none;
+}
+.search > button {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border: none;
+  opacity: 0.4;
+}
+.voice__lists {
+  margin: 0px;
+  width: 100%;
+  height: 300px;
+  padding-inline-start: 0px;
+  overflow: scroll;
+}
+.voice__lists__item {
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 1px gainsboro;
+}
+.list_image > img {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.voice__lists__item > button {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px gainsboro;
+}
+.currently-playing {
+  margin: 10px 0px;
+  background-color: #222222;
+  width: 95%;
+  padding: 20px 30px;
+  border-radius: 50px;
+  box-shadow: 0 19px 38px rgba(34, 34, 34, 0.1),
+    0 15px 12px rgba(34, 34, 34, 0.2);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.sounds-playing {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  --boxSize: 8px;
+  --gutter: 4px;
+  width: calc((var(--boxSize) + var(--gutter)) * 5);
+}
+.sounds-playing > div {
+  transform: scaleY(0.4);
+  height: 100%;
+  width: var(--boxSize);
+  background: white;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 8px;
+}
+.sounds-playing > div:nth-child(1) {
+  animation-name: quiet;
+}
+.sounds-playing > div:nth-child(2) {
+  animation-name: normal;
+}
+.sounds-playing > div:nth-child(3) {
+  animation-name: quiet;
+}
+.sounds-playing > div:nth-child(4) {
+  animation-name: loud;
+}
+.sounds-playing > div:nth-child(5) {
+  animation-name: quiet;
+}
+.current__player {
+  display: flex;
+  align-items: center;
+}
+
+.current__player i:nth-child(2) {
+  margin: 0 10px;
+}
