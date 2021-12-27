@@ -1,3 +1,5 @@
+@import "reset.css";
+
 @keyframes quiet {
   25% {
     transform: scaleY(0.6);
